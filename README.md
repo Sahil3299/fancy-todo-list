@@ -67,7 +67,7 @@ npm run dev
 ## Project Structure
 
 ```
-src/
+src//
 ├── components/
 │   ├── AllTodoLists.jsx      # Sidebar with all todo lists
 │   ├── App.jsx               # Main app component
