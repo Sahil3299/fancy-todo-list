@@ -2,13 +2,31 @@
 
 A modern, feature-rich todo list application built with React and Material-UI.
 
+[Live Demo](https://fancy-todo-list-sigma.vercel.app/) • [View on GitHub](https://github.com/Sahil3299/fancy-todo-list)
+
+## Table of contents
+
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
 - Create and manage multiple todo lists
 - Add, edit, and delete todo items
-- Persistent storage using IndexedDB
-- Responsive Material-UI design
+- Persistent storage using IndexedDB (via Dexie)
+- Responsive Material-UI (MUI) design
 - Real-time updates with SWR
+- Accessible and mobile-friendly UI
+
+## Live Demo
+
+Try the app live: https://fancy-todo-list-sigma.vercel.app/
 
 ## Tech Stack
 
@@ -23,18 +41,18 @@ A modern, feature-rich todo list application built with React and Material-UI.
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd fancy-todo-list
+git clone https://github.com/Sahil3299/fancy-todo-list.git
+cd fancy-todo-list
    ```
 
 2. Install dependencies:
    ```bash
-   npm install
+npm install
    ```
 
 3. Start the development server:
    ```bash
-   npm run dev
+npm run dev
    ```
 
 4. Open your browser and navigate to `http://localhost:5173`
