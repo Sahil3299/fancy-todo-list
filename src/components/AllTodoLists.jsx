@@ -6,6 +6,9 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
+  Typography,
+  Box,
+  Divider,
 } from '@mui/material';
 import { useEffect } from 'react';
 
@@ -25,33 +28,62 @@ export function AllTodoLists() {
   return (
     <Drawer
       sx={{
-        width: 0.25,
-        minWidth: 200,
+        width: 280,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
-          width: 0.25,
-          minWidth: 200,
+          width: 280,
           boxSizing: 'border-box',
+          background: 'linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%)',
+          borderRight: '1px solid #dee2e6',
         },
       }}
       variant="permanent"
       anchor="left"
     >
-      {/*Empty Toolbar for spacing*/}
       <Toolbar />
+      <Box sx={{ p: 2 }}>
+        <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
+          My Todo Lists
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+      </Box>
       <List>
         {data.map(({ name, id, icon }) => {
           const Icon = Icons[icon];
           return (
-            <ListItem key={id} disablePadding>
+            <ListItem key={id} disablePadding sx={{ px: 1 }}>
               <ListItemButton
                 onClick={() => {
                   setCurrentList(id);
                 }}
                 selected={currentList === id}
+                sx={{
+                  borderRadius: 2,
+                  mx: 1,
+                  mb: 0.5,
+                  transition: 'all 0.2s ease-in-out',
+                  '&:hover': {
+                    backgroundColor: 'rgba(98, 0, 234, 0.08)',
+                    transform: 'translateX(4px)',
+                  },
+                  '&.Mui-selected': {
+                    backgroundColor: 'rgba(98, 0, 234, 0.15)',
+                    borderLeft: '4px solid #6200ea',
+                    '&:hover': {
+                      backgroundColor: 'rgba(98, 0, 234, 0.2)',
+                    },
+                  },
+                }}
               >
-                {Icon ? <Icon /> : <Icons.List />}
-                <ListItemText sx={{ ml: 0.5 }} primary={name} />
+                <Box sx={{ mr: 2, color: currentList === id ? '#6200ea' : 'inherit' }}>
+                  {Icon ? <Icon /> : <Icons.List />}
+                </Box>
+                <ListItemText
+                  primary={name}
+                  primaryTypographyProps={{
+                    fontWeight: currentList === id ? 600 : 400,
+                  }}
+                />
               </ListItemButton>
             </ListItem>
           );
