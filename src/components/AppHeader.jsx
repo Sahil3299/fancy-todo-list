@@ -1,5 +1,5 @@
-import { Add } from '@mui/icons-material';
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import { Add, ListAlt } from '@mui/icons-material';
+import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { usePopupState } from 'material-ui-popup-state/hooks';
 
 import { NewListDialog } from './NewListDialog.jsx';
@@ -15,18 +15,26 @@ export function AppHeader() {
         sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
+          <ListAlt sx={{ mr: 2 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Lists
+            Fancy Todo Lists
           </Typography>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
+          <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<Add />}
             onClick={dialogState.open}
+            sx={{
+              borderRadius: 20,
+              textTransform: 'none',
+              '&:hover': {
+                transform: 'scale(1.05)',
+                transition: 'transform 0.2s',
+              },
+            }}
           >
-            <Add />
-          </IconButton>
+            New List
+          </Button>
         </Toolbar>
       </AppBar>
     </>
