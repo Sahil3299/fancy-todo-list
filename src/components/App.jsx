@@ -1,4 +1,4 @@
-import { Box, CssBaseline } from '@mui/material';
+import { Box } from '@mui/material';
 
 import { AppState } from '../providers/AppState.jsx';
 import { AllTodoLists } from './AllTodoLists.jsx';
@@ -8,8 +8,7 @@ import { CurrentTodoList } from './CurrentTodoList.jsx';
 export function App() {
   return (
     <AppState>
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
+      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <AppHeader />
         <AllTodoLists />
         <CurrentTodoList />
